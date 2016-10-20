@@ -4,8 +4,8 @@ var mysql = require('mysql');
 var port = 8000;
 
 var active = {
-	clients: new Object(),
-	users: new Object()
+	clients: {},
+	users: {}
 };
 
 Object.prototype.getKey = function(value){
