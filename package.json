@@ -1,0 +1,15 @@
+{
+  "name": "boekk-live-reload",
+  "version": "1.0.0",
+  "description": "Node app for the live reload",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mace Muilman",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.11.1",
+    "socket.io": "^1.5.0"
+  }
+}
