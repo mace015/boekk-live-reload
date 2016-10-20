@@ -25,17 +25,12 @@ io.on('connection', function(socket){
 	socket.on('register', function(data){
 
 		active.clients[socket.id] = data.id;
-
 		activeKey = active.users.getKey(socket.id);
-
 		if (activeKey !== null){
 			delete active.users[activeKey];
 		}
-
 		active.users[data.id] = socket.id;
-
 		console.log("Socket " + socket.id + " logged in as " + data.id);
-
 		return socket.emit('register', { status: true });
 
 	});
@@ -43,9 +38,7 @@ io.on('connection', function(socket){
 	socket.on('disconnect', function(){
 
 		if (active.clients[socket.id] != 0){
-
 			delete active.users[ active.clients[socket.id] ];
-
 		}
 
 		delete active.clients[socket.id];
@@ -77,15 +70,10 @@ setTimeout(function(){
 
 			connected = active.clients.getKey(event.id_user);
 			if (connected !== null){
-				
 				socket.emit('event:fired', { event: event.event });
-
 			}
-
 			connection.query('DELETE FROM `events` WHERE `id` = "' + event.id + '" LIMIT 1', function(err, result){
-
 				if (err) throw err;
-
 			});
 
 		});
